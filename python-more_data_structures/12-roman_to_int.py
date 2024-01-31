@@ -7,10 +7,9 @@ def roman_to_int(roman_string):
     result = 0
     a = 0
     for i in roman_string[::-1]:
-        b = roman[i]
-        if b < a:
-            result -= b
+        a = roman[i]
+        if result < a * 5:
+            result += a
         else:
-            result += b
-        a =b
+            result -= a
     return (result)
