@@ -1,9 +1,11 @@
 #!/usr/bin/python3
 """
-    Class square
+    task 0 class square
 """
+
+
 class Square:
     """
-    Defining a Square 
+    Defining a Square
     """
     pass
