@@ -28,10 +28,11 @@ class Square:
         self.__size = value
 
     def my_print(self):
-        if self.__size == 0:
+        if self._Square__size == 0:
+            print("\n", end="")
+            return
+        for i in range(self._Square__size):
+            for j in range(self._Square__size):
+                print("#", end="")
             print()
-        else:
-            for i in range(self.__size):
-                for j in range(self.__size):
-                    print('#', end='')
-                print()
+
