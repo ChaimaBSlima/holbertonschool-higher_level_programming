@@ -1,0 +1,34 @@
+"""
+Description: Test text_indentation function
+
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+>>> text_indentation()
+Traceback (most recent call last):
+TypeError: text_indentation() missing 1 required positional argument: 'text'
+
+>>> text_indentation(None)
+Traceback (most recent call last):
+TypeError: text must be a string
+
+>>> text_indentation(554545)
+Traceback (most recent call last):
+TypeError: text must be a string
+
+>>> a = "Hi this is test"
+>>> text_indentation(a)
+Hi this is test
+
+>>> a = "Hi this"
+>>> b = " is test"
+>>> text_indentation(a, b)
+Traceback (most recent call last):
+TypeError: text_indentation() takes 1 positional argument but 2 were given
+
+>>> text_indentation("Hi this: is, test 2.")
+Hi this:
+<BLANKLINE>
+is, test 2.
+<BLANKLINE>
+
+"""
