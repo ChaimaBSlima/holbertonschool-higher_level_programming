@@ -69,7 +69,7 @@ class Rectangle:
 
         chaima = []
         for i in range(self.__height):
-            [chaima.append(self.print_symbol) for j in range(self.__width)]
+            [chaima.append(str(self.print_symbol)) for j in range(self.__width)]
             if i != self.__height - 1:
                 chaima.append("\n")
         return ("".join(chaima))
