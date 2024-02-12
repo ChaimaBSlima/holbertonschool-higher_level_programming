@@ -95,6 +95,7 @@ class Rectangle(Base):
             self.height))
 
     def hidden_update(self, id=None, width=None, height=None, x=None, y=None):
+        """ update instance attributes via */**args"""
         if id is not None:
             self.id = id
         if width is not None:
