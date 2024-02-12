@@ -70,6 +70,6 @@ class Rectangle(Base):
         if type(value) is not int:
             raise TypeError(variable, "must be an integer")
         if test and value < 0:
-            raise TypeError(variable, "must be >= 0")
+            raise ValueError(variable, "must be >= 0")
         elif not test and value <= 0:
-            raise TypeError(variable, "must be >= 0")
+            raise ValueError(variable, "must be >= 0")
