@@ -2,9 +2,10 @@
 """ python-almost_a_circle project: Module for Rectangle
     starting at task 2
 """
+from models.base import Base
 
 
-class Rectangle:
+class Rectangle(Base):
     """Represent a rectangle."""
 
     def __init__(self, width, height, x=0, y=0, id=None):
