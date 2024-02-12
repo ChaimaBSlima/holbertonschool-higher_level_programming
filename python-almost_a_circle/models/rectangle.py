@@ -85,3 +85,11 @@ class Rectangle(Base):
         C = '#' * self.width
         D = A + (B + C + '\n') * self.height
         print(D, end='')
+
+    def __str__(self):
+        "Task 6: return string informations"
+        return ('[{}] ({}) {}/{} - {}/{}'.format(
+            type(self).__name__,
+            self.id, self.x,
+            self.y, self.width,
+            self.height))
