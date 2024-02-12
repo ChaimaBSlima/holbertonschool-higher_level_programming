@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-""" python-almost_a_circle project: Module for base """
+""" python-almost_a_circle project: Module for base
+    starting at task 1
+"""
 
 
 class Base:
