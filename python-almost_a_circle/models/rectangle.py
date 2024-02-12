@@ -67,7 +67,7 @@ class Rectangle(Base):
         """ Testing the integers and tracking
         errors like it was demanded in task 3
         """
-        if type(value) is not int:
+        if not isinstance(value, int):
             raise TypeError("{} must be an integer".format(variable))
         if test and value < 0:
             raise ValueError("{} must be >= 0".format(variable))
