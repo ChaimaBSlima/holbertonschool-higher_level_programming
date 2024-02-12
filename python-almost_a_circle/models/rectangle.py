@@ -75,5 +75,13 @@ class Rectangle(Base):
             raise ValueError("{} must be > 0".format(variable))
 
     def area(self):
-        """ calculate the rectangle area """
+        """ task 4: calculate the rectangle area """
         return (self.width * self.height)
+
+    def display(self):
+        "Task 5 and 7: represent the rectangle with #"
+        A = '\n' * self.y
+        B = ' ' * self.x
+        C = '#' * self.width
+        D = A + (B + C + '\n') * self.height
+        print(D, end='')
