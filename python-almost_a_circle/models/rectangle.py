@@ -116,3 +116,11 @@ class Rectangle(Base):
             self.hidden_update(*args)
         elif kwargs:
             self.hidden_update(**kwargs)
+
+    def to_dictionary(self):
+        """ Task 13: Return the dictionary representation
+        of a Rectangle
+        """
+        chaima = {"id": self.id, "width": self.__width,
+                  "height": self.__height, "x": self.__x, "y": self.__y}
+        return (chaima)
