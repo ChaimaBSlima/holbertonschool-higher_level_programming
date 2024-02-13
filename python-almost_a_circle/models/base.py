@@ -28,6 +28,16 @@ class Base:
         else:
             return (dumps(list_dictionaries))
 
+    @staticmethod
+    def from_json_string(json_string):
+        """ Task 17: returns the list of the JSON
+        string representation json_string
+        """
+        if json_string is None or not json_string:
+            return ("[]")
+        else:
+            return (dumps(json_string))
+
     @classmethod
     def save_to_file(cls, list_objs):
         "Task 16: saves jsonified object to file"
