@@ -33,5 +33,5 @@ class Base:
         "Task 16: saves jsonified object to file"
         if list_objs is not None:
             list_objs = [i.to_dictionary() for i in list_objs]
-        with open("[].json".format(cls.__name__), "w", encoding="utf-8") as f:
+        with open("{}.json".format(cls.__name__), "w", encoding="utf-8") as f:
             f.write(cls.to_json_string(list_objs))
