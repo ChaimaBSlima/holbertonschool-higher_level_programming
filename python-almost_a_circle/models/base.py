@@ -2,7 +2,7 @@
 """ python-almost_a_circle project: Module for base
     starting at task 1
 """
-from json import dumps
+from json import dumps, loads
 
 
 class Base:
@@ -24,7 +24,7 @@ class Base:
         representation of list_dictionaries
         """
         if list_dictionaries is None or not list_dictionaries:
-            return ("[]")
+            return ([])
         else:
             return (dumps(list_dictionaries))
 
@@ -36,7 +36,7 @@ class Base:
         if json_string is None or not json_string:
             return ("[]")
         else:
-            return (dumps(json_string))
+            return (loads(json_string))
 
     @classmethod
     def save_to_file(cls, list_objs):
