@@ -24,7 +24,7 @@ class Base:
         representation of list_dictionaries
         """
         if list_dictionaries is None or not list_dictionaries:
-            return ([])
+            return ("[]")
         else:
             return (dumps(list_dictionaries))
 
@@ -34,7 +34,7 @@ class Base:
         string representation json_string
         """
         if json_string is None or not json_string:
-            return ("[]")
+            return ([])
         else:
             return (loads(json_string))
 
