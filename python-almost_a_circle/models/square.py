@@ -34,3 +34,24 @@ class Square(Rectangle):
     def size(self, value):
         self.width = value
         self.height = value
+
+    def hidden_update(self, id=None, size=None, x=None, y=None):
+        """ update instance attributes via */**args"""
+        if id is not None:
+            self.id = id
+        if size is not None:
+            self.size = size
+        if x is not None:
+            self.x = x
+        if y is not None:
+            self.y = y
+
+    def update(self, *args, **kwargs):
+        """Task 12 : update instance attributes
+        via no-keyword and keyword argument
+        """
+
+        if args:
+            self.hidden_update(*args)
+        elif kwargs:
+            self.hidden_update(**kwargs)
