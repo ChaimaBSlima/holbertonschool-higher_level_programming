@@ -55,3 +55,11 @@ class Square(Rectangle):
             self.hidden_update(*args)
         elif kwargs:
             self.hidden_update(**kwargs)
+
+    def to_dictionary(self):
+        """ Task 14: Return the dictionary representation
+        of a square
+        """
+        chaima = {"id": self.id, "size": self.width,
+                  "x": self.x, "y": self.y}
+        return (chaima)
