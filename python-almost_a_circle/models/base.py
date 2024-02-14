@@ -45,3 +45,17 @@ class Base:
             list_objs = [i.to_dictionary() for i in list_objs]
         with open("{}.json".format(cls.__name__), "w", encoding="utf-8") as f:
             f.write(cls.to_json_string(list_objs))
+
+    @classmethod
+    def create(cls, **dictionary):
+        """ Task 18: Loads instance from dictionary """
+        from models.rectangle import Rectangle
+        from models.square import Square
+        if cls is Rectangle:
+            chaima = Rectangle(1, 1)
+        elif cls is Square:
+            chaima = Square(1)
+        else:
+            chaima = None
+        chaima.update(**dictionary)
+        return chaima
