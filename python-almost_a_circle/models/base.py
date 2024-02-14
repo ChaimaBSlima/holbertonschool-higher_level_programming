@@ -64,7 +64,7 @@ class Base:
     def load_from_file(cls):
         """ Task 19: Load string from a file and unjsonifies"""
         from os import path
-        file = "[].json".format(cls.__name__)
+        file = "{}.json".format(cls.__name__)
         if not path.isfile(file):
             return ([])
         with open(file, "r", encoding="utf-8") as f:
