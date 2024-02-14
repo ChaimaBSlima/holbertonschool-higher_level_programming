@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-#!/usr/bin/python3
 '''Module for Square unit tests.'''
 import unittest
 from models.base import Base
