@@ -57,7 +57,8 @@ class Base:
             chaima = Square(1)
         else:
             chaima = None
-        chaima.update(**dictionary)
+        if chaima:
+            chaima.update(**dictionary)
         return chaima
 
     @classmethod
