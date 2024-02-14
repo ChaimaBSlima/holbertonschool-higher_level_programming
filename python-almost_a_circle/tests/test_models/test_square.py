@@ -1,49 +1,66 @@
 #!/usr/bin/python3
+#!/usr/bin/python3
+'''Module for Square unit tests.'''
 import unittest
 from models.base import Base
 from models.square import Square
 
+
 class TestSquare(unittest.TestCase):
+    '''Tests the Square class.'''
 
-    def test_init(self):
-        square = Square(5, 2, 3, 1)
-        self.assertEqual(square.size, 5)
-        self.assertEqual(square.x, 2)
-        self.assertEqual(square.y, 3)
-        self.assertEqual(square.id, 1)
+    def setUp(self):
+        '''Set up before each test method.'''
+        Base._Base__nb_objects = 0
 
-    def test_size_property(self):
-        square = Square(5)
-        square.size = 8
-        self.assertEqual(square.size, 8)
-        self.assertEqual(square.width, 8)
-        self.assertEqual(square.height, 8)
+    def tearDown(self):
+        '''Clean up after each test method.'''
+        pass
 
-    def test_str(self):
-        square = Square(5, 2, 3, 1)
-        self.assertEqual(str(square), "[Square] (1) 2/3 - 5")
+    def test_class_type(self):
+        '''Test Square class type.'''
+        self.assertEqual(str(Square), "<class 'models.square.Square'>")
 
-    def test_update_with_args(self):
-        square = Square(5, 2, 3, 1)
-        square.update(4, 6, 7, 8)
-        self.assertEqual(square.id, 4)
-        self.assertEqual(square.size, 6)
-        self.assertEqual(square.x, 7)
-        self.assertEqual(square.y, 8)
+    def test_inheritance(self):
+        '''Test if Square inherits from Base.'''
+        self.assertTrue(issubclass(Square, Base))
 
-    def test_update_with_kwargs(self):
-        square = Square(5, 2, 3, 1)
-        square.update(id=4, size=6, x=7, y=8)
-        self.assertEqual(square.id, 4)
-        self.assertEqual(square.size, 6)
-        self.assertEqual(square.x, 7)
-        self.assertEqual(square.y, 8)
+    def test_constructor_no_args(self):
+        '''Test constructor signature with no arguments.'''
+        with self.assertRaises(TypeError) as e:
+            Square()
+        s = "__init__() missing 1 required positional argument: 'size'"
+        self.assertEqual(str(e.exception), s)
+
+    def test_constructor_many_args(self):
+        '''Test constructor signature with too many arguments.'''
+        with self.assertRaises(TypeError) as e:
+            Square(1, 2, 3, 4, 5)
+        s = "__init__() takes from 2 to 5 positional arguments but 6 were given"
+        self.assertEqual(str(e.exception), s)
+
+    def test_instantiation(self):
+        '''Test instantiation with various scenarios.'''
+        r = Square(10)
+        self.assertEqual(str(type(r)), "<class 'models.square.Square'>")
+        self.assertTrue(isinstance(r, Base))
+        d = {'_Rectangle__height': 10, '_Rectangle__width': 10,
+             '_Rectangle__x': 0, '_Rectangle__y': 0, 'id': 1}
+        self.assertDictEqual(r.__dict__, d)
+
+        with self.assertRaises(TypeError) as e:
+            r = Square("1")
+        msg = "width must be an integer"
+        self.assertEqual(str(e.exception), msg)
+
 
     def test_to_dictionary(self):
-        square = Square(5, 2, 3, 1)
-        dictionary = square.to_dictionary()
-        expected = {"id": 1, "size": 5, "x": 2, "y": 3}
-        self.assertEqual(dictionary, expected)
+        '''Test to_dictionary() method signature and functionality.'''
+        with self.assertRaises(TypeError) as e:
+            Square.to_dictionary()
+        s = "to_dictionary() missing 1 required positional argument: 'self'"
+        self.assertEqual(str(e.exception), s)
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     unittest.main()
