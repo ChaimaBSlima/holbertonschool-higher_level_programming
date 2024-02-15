@@ -95,6 +95,7 @@ Represents a square and inherits from `Rectangle`. Features include:
 | Task  |  Name of the task               | demanded work |
 | :-------- |  :------------------------- | :------------------------- |
 | `Task 20`| 20. Let's draw it| Update the class Base by adding the static method draw(list_rectangles, list_squares): that opens a window and draws all the Rectangles and Squares |
+![Capture d'écran 2024-02-15 062939](https://github.com/ChaimaBSlima/holbertonschool-higher_level_programming/assets/146720036/4737b0e8-fc25-492c-8c8e-38d8a86b9ec0)
 
 
 
