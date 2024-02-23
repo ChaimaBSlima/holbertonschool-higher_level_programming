@@ -70,7 +70,7 @@ class Base:
             return ([])
         with open(file, "r", encoding="utf-8") as f:
             return ([cls.create(**i) for i in cls.from_json_string(f.read())])
-    
+
     @staticmethod
     def draw(list_rectangles, list_squares):
         import turtle
