@@ -1,3 +1,3 @@
 #!/usr/bin/python3
-from easyprint_7 import easy_print
-easy_print()
+if __name__ == "__main__":
+    __import__('os').write(1, b"#pythoniscool\n")
